@@ -63,7 +63,6 @@
 				<div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
-                                <img src="images/logo.png" alt="">
 								<li><a href="index.php">Home Page</a></li>
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
@@ -218,7 +217,7 @@
                 <div class="col-md-8">
                     <div class="copyright">
                         <p>&copy;Children toy
-                            <img src="images/logo.png" width="50" height="50"> </p>
+                            <img src="images/logo.jpg" width="50" height="50"> </p>
                     </div>
                 </div>
                 
