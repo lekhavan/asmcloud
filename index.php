@@ -220,7 +220,7 @@
             <div class="row">
                 <div class="col-md-8">
                     <div class="copyright">
-                        <p>&copy;Just do it
+                        <p>&copy;Children toy
                             <img src="images/nike.jpeg" width="50" height="50"> </p>
                     </div>
                 </div>

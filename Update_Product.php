@@ -142,8 +142,8 @@
 					    if(pg_num_rows($result)==0){
 						        copy($pic['tmp_name'], "img/".$pic['name']);
 						        $filePic = $pic['name'];
-						        $sqlstring="UPDATE product set product_name='$proname', price=$price, smalldesc='$short',
-						        detaildesc='$detail', pro_qty=$qty,
+						        $sqlstring="UPDATE product set product_name='$proname', price='$price', smalldesc='$short',
+						        detaildesc='$detail', pro_qty='$qty',
 						        pro_image='$filePic',cat_id='$category',
 						        prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 						        pg_query($conn,$sqlstring);

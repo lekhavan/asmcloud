@@ -32,7 +32,7 @@ if(isset($_POST['btnUpdate'])){
 			$sq="UPDATE customer
 			SET custname='$fullname', address='$address',
 			telephone='$tel' WHERE username='" . $_SESSION['us'] . "'";
-			pg_query($conn,$sq) or die(pg_error($conn));
+			pg_query($conn,$sq) or die(pg_errormessage($conn));
 		}
 		echo '<meta http-equiv="refresh" content="0;URL=index.php"/>';
 	}
