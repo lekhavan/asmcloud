@@ -1,5 +1,5 @@
 <?php
-    $Connect = pg_connect("postgres://symwisvhvnxipq:e3d493a2db5ef2e25e255d9fd0527625ff687ccd119e9c7ddf7b3e6eb67df34e@ec2-44-193-182-0.compute-1.amazonaws.com:5432/d1oqshbn724nm");
+    $Connect = pg_connect("postgres://gmpcstrqfaogmy:d0a56b7680988fcc7e23d4ce63fa22ca94fa9747cb3c5a157cd4a4d47e74c621@ec2-35-168-65-132.compute-1.amazonaws.com:5432/dbdncl8acmh72r");
 	//$Connect =pg_connect("host=localhost port=5432 dbname=postgres pass=123456")
 	if (!$Connect) {
         die("Connection failed");
