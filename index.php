@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		
-		<div class="header-middle" style="background-color:	#Darkgreen">
+		<div class="header-middle" style="background-color:	Darkgreen">
 			<div class="container" >
 				<div>
 						<div class="mainmenu pull-left">
