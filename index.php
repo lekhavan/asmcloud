@@ -58,7 +58,7 @@
 			</div>
 		</div>
 		
-		<div class="header-middle" style="background-color:	#777777">
+		<div class="header-middle" style="background-color:	#Darkgreen">
 			<div class="container" >
 				<div>
 						<div class="mainmenu pull-left">
@@ -146,7 +146,7 @@
         }
         elseif($page=="logout")
         {
-            include_once("logout.php");
+            include_once("Logout.php");
         }
         elseif($page=="update_product")
         {
