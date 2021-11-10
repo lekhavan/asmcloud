@@ -63,6 +63,7 @@
 				<div>
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
+                                <img src="images/logo.png" alt="">
 								<li><a href="index.php">Home Page</a></li>
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
@@ -70,7 +71,7 @@
 								<li class="dropdown"><a href="#">Management<i class="fa fa-angle-down"></i></a>
                                     <ul role="menu" class="sub-menu">
                                         <li><a href="?page=Category_Management">Category edit</a></li>
-										<li><a href="?page=product_management">Songs edit</a></li>
+										<li><a href="?page=product_management">Products edit</a></li>
                                     </ul>
                                     <?php
                                         }
@@ -100,7 +101,7 @@
                             
 						</div>
                         
-                        <marquee width="100%" behavior="scroll" bgcolor="orance"><b>WELCOME TO CHILDEN TOY SHOP</b></marquee>
+                        <marquee width="100%" behavior="scroll" bgcolor="orance"><b>***WELCOME TO CHILDEN TOY SHOP***</b></marquee>
 					</div>
 
 				</div>
@@ -202,10 +203,6 @@
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
                         <h2><span>Children Toy</span></h2>
-                        <p>Toy 1 <br>
-                       Toy 2<br>
-                        Toy 3 <br>
-                        </p>
                         <div class="footer-social">
                             <a href="https://www.facebook.com/Just-Authentic-101349471810663    " target="_blank"><i class="fa fa-facebook"></i></a>
                             <a href="https://https://www.youtube.com/watch?v=65JrtwtTOdc&t=2s" target="_blank"><i class="fa fa-youtube"></i></a>
@@ -221,7 +218,7 @@
                 <div class="col-md-8">
                     <div class="copyright">
                         <p>&copy;Children toy
-                            <img src="images/nike.jpeg" width="50" height="50"> </p>
+                            <img src="images/logo.png" width="50" height="50"> </p>
                     </div>
                 </div>
                 
