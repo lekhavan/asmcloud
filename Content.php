@@ -12,13 +12,13 @@ include_once("connection.php");
                 <div class="col-md-12">
                     <div class="latest-product">
 
-                        <h2 class="section-title"><strong><a color="blue">New Toy</a></h2></strong>
+                        <h2 class="section-title"><strong><a color="blue">New Toys</a></h2></strong>
                         <div class="product-carousel">
                            <?php
 		  				   	$result = pg_query($conn, "SELECT * FROM product" );
 			
 			                if (!$result) { 
-                                die('Invalid query: ' . pg_error($conn));
+                                die('Invalid query: ' . pg_errormessage($conn));
                             }			            
 			                while($row = pg_fetch_array($result,NULL, PGSQL_ASSOC)){
 				            ?>				            
@@ -34,7 +34,7 @@ include_once("connection.php");
                                 </h2>
                                     
                                 <div class="product-carousel-price">
-                                    <ins><?php echo  $row['Price']?>,0$</ins> 
+                                    <ins><?php echo  $row['price']?>,0$</ins> 
                                 </div> 
                             </div>
                 

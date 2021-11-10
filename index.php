@@ -64,9 +64,6 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home Page</a></li>
-                                <li> 
-                                <a href="?page=Search">Search Products</a>
-                                </li>
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                                 ?> 
@@ -163,10 +160,6 @@
         {
             include_once("Update_customer.php");
         }
-        elseif($page=="Search")
-        {
-            include_once("timkiem_2.php");
-        }
     } 
     else{
         include("Content.php");
@@ -208,10 +201,10 @@
             <div class="row">
                 <div class="col-md-3 col-sm-6">
                     <div class="footer-about-us">
-                        <h2><span>Nike Shoes</span></h2>
-                        <p>Nike SB <br>
-                        Nike Airforce <br>
-                        Jordan <br>
+                        <h2><span>Children Toy</span></h2>
+                        <p>Toy 1 <br>
+                       Toy 2<br>
+                        Toy 3 <br>
                         </p>
                         <div class="footer-social">
                             <a href="https://www.facebook.com/Just-Authentic-101349471810663    " target="_blank"><i class="fa fa-facebook"></i></a>
