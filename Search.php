@@ -1,5 +1,5 @@
 <div class="container">
-<a href="index.php">BACK</a>
+<h1 typetext="time-new-rowman">PRODUCTS</h1>
 
 </div>
 <div class="container">
@@ -27,7 +27,11 @@
 			                  while($row = pg_fetch_array($result,NULL, PGSQL_ASSOC)){
 				                  ?>
     <!--Display product-->
-
+    <div class="maincontent-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="latest-product">
                                 <div class="product-f-imagemu">
                                    <img src="images/<?php echo $row['pro_image']?>" width="550" height="450">
                                     <div class="product-hover">
@@ -41,6 +45,11 @@
                                 <div class="product-carousel-price">
                                     <ins><?php echo  $row['price']?>,0$</ins> 
                               </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
     <?php
 				}
       }
