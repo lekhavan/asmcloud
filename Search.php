@@ -37,9 +37,6 @@
             
             <div class="single-product">
                                 <div class="product-f-imagemu">
-                                    <div class="product-hover">
-                                        <a href="?page=1sanpham&&id=<?php echo  $row['product_id']?>" class="view-details-link"><i class="fa fa-link"></i> Add to cart</a>
-                                    </div>
                                 </div>
         </div>
     </div>
