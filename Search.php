@@ -27,19 +27,19 @@
 			                    while($row = pg_fetch_array($result, NULL, PGSQL_ASSOC)){
 				                  ?>
     <!--Display product-->
-    <div class="col-sm-3">
-        <div class="card">
-            <img src="img/<?php echo $row['pro_image']?>" style="width:100%">
-            <h4 class="name"><a
-                    href="?page=quanly_chitietsanpham&ma=<?php echo  $row['product_id']?>"><?php echo  $row['product_name']?></a>
-            </h4>
-            <div class="price"><ins>$ <?php echo  $row['price']?></ins> <del class="oldprice">
-            
-            <div class="single-product">
-                                <div class="product-f-imagemu">
+    <div class="product-f-imagemu">
+                                   <img src="img/<?php echo $row['pro_image']?>" width="550" height="450">
+                                    <div class="product-hover">
+                                        <a href="?page=product_management&&id=<?php echo  $row['pro_image']?>" class="view-details-link"><i class="fa fa-link"></i> View Details</a>
+                                    </div>
                                 </div>
-        </div>
-    </div>
+                                
+                                <h2><a href="?page=quanly_chitietsanpham&&ma=<?php echo  $row['product_id']?>"><?php echo  $row['product_name' ]?></a>
+                                </h2>
+                                    
+                                <div class="product-carousel-price">
+                                    <ins><?php echo  $row['price']?>,0$</ins> 
+                              </div>
     <?php
 				}
       }
