@@ -50,7 +50,7 @@
 						<div class="contactinfo">
 							<ul class="nav nav-pills">
 								<li><a href="#"><i class="fa fa-phone"></i> 0328228593</a></li>
-								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>childrentoyshopvn@gmail.com</a></li>
+								<li><a href="" target="_blank"><i class="fa fa-envelope"></i>childrentoyshopATNcompany@gmail.com</a></li>
 							</ul>
 						</div>
 					</div>
@@ -106,7 +106,7 @@
                             
 						</div>
                         
-                        <marquee width="100%" behavior="scroll" bgcolor="orance"><b>***WELCOME TO CHILDEN TOY SHOP***</b></marquee>
+                        <marquee width="100%" behavior="scroll" bgcolor="orance"><b>***WELCOME TO CHILDEN TOY SHOP -UNDER THE ATN COMPANY***</b></marquee>
 					</div>
 
 				</div>
