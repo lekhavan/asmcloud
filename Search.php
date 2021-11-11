@@ -1,5 +1,6 @@
 <div class="container">
-    <h1><u>All Product</u></h1>
+<a href="index.php">BACK</a>
+
 </div>
 <div class="container">
     <?php
