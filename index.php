@@ -64,6 +64,12 @@
 						<div class="mainmenu pull-left">
 							<ul class="nav navbar-nav collapse navbar-collapse">
 								<li><a href="index.php">Home Page</a></li>
+                                <form class="navbar-form navbar-left" action="index.php?page=search" method="post">
+                                <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Search" name="txtSearch">
+                                 </div>
+                                 <button type="submit" class="btn btn-default">Search</button>
+                                </form>
                                 <?php
                                     if(isset($_SESSION['admin']) && $_SESSION['admin']==1){
                                 ?> 
