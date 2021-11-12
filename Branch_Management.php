@@ -8,7 +8,7 @@
         <h1>Company Branch</h1>
         <p>
         <img src="images/add.png" alt="Add new" width="16" height="16" border="0" /> 
-        <a href="?page=Add_Branch"> Add</a>
+        <a href="?page=add_branch"> Add</a>
         </p>
        
         <table id="tablecategory" class="table table-striped table-bordered" cellspacing="0" width="100%">
@@ -41,7 +41,7 @@
               <img src='images/edit.png' border='0'  /></a></td>
 
               <td style='text-align:center'>
-              <a href="?page=Category_Management& function=del&&id=<?php echo $row["bra_id"]; ?> " onclick="return deleteConfirm()">
+              <a href="?page=branch_management& function=del&&id=<?php echo $row["bra_id"]; ?> " onclick="return deleteConfirm()">
               <img src='images/delete.png' border='0' /></a></td>
               
             </tr>
