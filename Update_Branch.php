@@ -18,17 +18,11 @@
 	?>
 <div class="container">
 	<h2>Updating Company Branch</h2>
-			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
-				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch ID(*):  </label>
-							<div class="col-sm-10">
-								  <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Branch ID" readonly value='<?php echo $bra_id ;?>'>
-							</div>
-					</div>	
+			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">	
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Branch Name(*):  </label>
 							<div class="col-sm-10">
-								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" value='<?php echo $bra_name; ?>'>
+								  <input type="text" name="txtName" id="txtName" class="form-control" placeholder="Branch Name" readonly value='<?php echo $bra_name; ?>'>
 							</div>
 					</div>
                     

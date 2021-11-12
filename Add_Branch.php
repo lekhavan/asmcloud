@@ -9,13 +9,9 @@
 		  include_once("connection.php");
 		  if(isset($_POST["btnAdd"]))
 		  {
-			  $id = $_POST["txtID"];
 			  $name = $_POST["txtName"];
 			  $des = $_POST["txtDes"];
 			  $err="";
-			  if($id==""){
-				  $err.="<li>Enter Branch ID, please</li>";
-			  }
 			  if($name==""){
 				  $err.="<li>Enter Branch Name, please</li>";
 			  }
@@ -23,16 +19,16 @@
 				  echo "<ul>$err</ul>";
 			  }
 			  else{
-				  $sq="SELECT * FROM branch WHERE bra_id='$id' or bra_name='$name'";
+				  $sq="SELECT * FROM branch WHERE bra_name='$name'";
 				  $result = pg_query($conn,$sq);
 				  if(pg_num_rows($result)==0)
 				  {
-					  pg_query($conn,"INSERT INTO branch (bra_id, bra_name, bra_des) VALUES ('$id', '$name', '$des')");
+					  pg_query($conn,"INSERT INTO branch (bra_name, bra_des) VALUES ('$name', '$des')");
 					  echo '<meta http-equiv="Refesh" content="0;URL=Category_Management.php"/>';
 				  }
 				  else
 				  {
-					  echo "<li>Duplicate  category ID or Name</li>";
+					  echo "<li>Duplicate  category Name</li>";
 				  }
 			  }
 		  }
@@ -40,13 +36,7 @@
 
 <div class="container">
 	<h2>Adding Branch</h2>
-			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">
-				 <div class="form-group">
-						    <label for="txtTen" class="col-sm-2 control-label">Branch ID(*):  </label>
-							<div class="col-sm-10">
-							      <input type="text" name="txtID" id="txtID" class="form-control" placeholder="Branch ID" value='<?php echo isset($_POST["txtID"])?($_POST["txtID"]):"";?>'>
-							</div>
-					</div>	
+			 	<form id="form1" name="form1" method="post" action="" class="form-horizontal" role="form">	
 				 <div class="form-group">
 						    <label for="txtTen" class="col-sm-2 control-label">Branch Name(*):  </label>
 							<div class="col-sm-10">
