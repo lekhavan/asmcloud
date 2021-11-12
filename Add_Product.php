@@ -85,7 +85,7 @@
 						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, bra_name)
 						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category','$branch')";
 						pg_query($conn,$sqlString);
-						echo '<meta http-equiv="refresh" content="0;URL =Product_Management.php"';
+						echo '<meta http-equiv="refresh" content="0;URL =?page=product_management"';
 					}
 					else
 					{

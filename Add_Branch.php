@@ -24,7 +24,7 @@
 				  if(pg_num_rows($result)==0)
 				  {
 					  pg_query($conn,"INSERT INTO branch (bra_name, bra_des) VALUES ('$name', '$des')");
-					  echo '<meta http-equiv="Refesh" content="0;URL=Category_Management.php"/>';
+					  echo '<meta http-equiv="Refesh" content="0;URL=?page=branch_management"/>';
 				  }
 				  else
 				  {

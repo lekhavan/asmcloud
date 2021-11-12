@@ -192,7 +192,7 @@
 					pro_qty=$qty, cat_id='$category',bra_name ='$branch',
 					prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 					pg_query($conn,$sqlstring);
-					echo '<meta http-equiv="refresh" content="0;URL=Product_Manager"/>';
+					echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
 				}
 				else{
 					echo "<li>Duplicate product Name</li>";
