@@ -58,24 +58,24 @@
 	   $des = $_POST["txtDes"];
 	   $err="";
 	   if($name==""){
-		   $err.="<li> Enter Category Name, please</li>";
+		   $err.="<li> Enter Branch Name, please</li>";
 	   }
        if($err!=""){
 		   echo "<ul>$err</ul>";
 	   }
 	   else
 	   {
-		   $sq="SELECT * FROM branch WHERE bra_name !='$name'";
-		   $result = pg_query($conn,$sq);
-		   if(pg_num_rows($result)==0)
-		   {
-			   pg_query($conn, "UPDATE branch SET bra_des='$des' WHERE bra_name='$name'");
-			   echo '<meta http-equiv="refresh" content="0;URL=?page=branch_management"/>';
-		   }
-		   else
-		   {
-			   echo "<li> Duplicate category Name</li>";
-		   }
+		$sq="SELECT * FROM branch WHERE bra_name !='$name'";
+		$result = pg_query($conn,$sq);
+		if(pg_num_rows($result)==0)
+		{
+			pg_query($conn, "UPDATE branch SET bra_des='$des' WHERE bra_name='$name'");
+			echo '<meta http-equiv="refresh" content="0;URL=?page=branch_management"/>';
+		}
+		else
+		{
+			echo "<li> Duplicate branch Name</li>";
+		}
 	   }
    }
    ?>
