@@ -59,7 +59,7 @@
               <td><?php echo $row["price"]; ?></td>
               <td ><?php echo $row["pro_qty"]; ?></td>
               <td><?php echo $row["cat_name"]; ?></td>
-              <td><?php echo $row["bran_name"]; ?></td>
+              <td><?php echo $row["bra_name"]; ?></td>
              <td align='center' class='cotNutChucNang'>
                 <img src='images/<?php echo $row['pro_image']; ?>' border='0' width="50" height="50"  /></td>
              <td align='center' class='cotNutChucNang'><a href="?page=update_product&&id=<?php echo $row["product_id"]; ?>">
