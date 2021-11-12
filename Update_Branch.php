@@ -65,7 +65,7 @@
 	   }
 	   else
 	   {
-		   $sq="SELECT * FROM branch WHERE bra_name='$name'";
+		   $sq="SELECT * FROM branch WHERE bra_name!='$name'";
 		   $result = pg_query($conn,$sq);
 		   if(pg_num_rows($result)==0)
 		   {
