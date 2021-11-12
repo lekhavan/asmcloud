@@ -20,13 +20,13 @@
 	}
 	function bind_Branch_List($conn)
 	{
-		$sqlString = "select bra_id, bra_name from branch";
+		$sqlString = "select bra_name from branch";
 		$result = pg_query($conn,$sqlString);
 		echo "<select name='BranchList' class='form-control'>
 			<option value='0'>Choose branch</option>";
 			while($row=pg_fetch_array($result,NULL, PGSQL_ASSOC))
 			{
-				echo "<option value='".$row['bra_id']."'>".$row['bra_name']."</option>";
+				echo "<option value='".$row['bra_name']."'>".$row['bra_name']."</option>";
 			}
 		echo "</select>";
 	}
@@ -82,10 +82,10 @@
 					{
 						copy($pic['tmp_name'], "img/".$pic['name']);
 						$filepic = $pic['name'];
-						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, bra_id)
+						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, bra_name)
 						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category','$branch')";
 						pg_query($conn,$sqlString);
-						echo '<meta http-equiv="refresh" content="0;URL =?page=product_management"';
+						echo '<meta http-equiv="refresh" content="0;URL =Product_Management.php"';
 					}
 					else
 					{

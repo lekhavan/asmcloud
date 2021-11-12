@@ -46,7 +46,7 @@
     }
     else
 	{
-		echo '<meta http-equiv="refresh" content="0;URL=Category_Management.php"/>'; 
+		echo '<meta http-equiv="refresh" content="0;URL=Branch_Management.php"/>'; 
 	}
 	?>
 
