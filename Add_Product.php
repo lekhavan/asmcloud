@@ -18,6 +18,18 @@
 			}
 		echo "</select>";
 	}
+	function bind_Branch_List($conn)
+	{
+		$sqlString = "select bra_id, bra_name from branch";
+		$result = pg_query($conn,$sqlString);
+		echo "<select name='BranchList' class='form-control'>
+			<option value='0'>Choose branch</option>";
+			while($row=pg_fetch_array($result,NULL, PGSQL_ASSOC))
+			{
+				echo "<option value='".$row['bra_id']."'>".$row['bra_name']."</option>";
+			}
+		echo "</select>";
+	}
 	if(isset($_POST["btnAdd"]))
 	{
 		$id = $_POST["txtID"];
@@ -28,6 +40,7 @@
 		$qty = $_POST["txtQty"];
 		$pic = $_FILES["txtImage"];
 		$category = $_POST["CategoryList"];
+		$branch = $_POST["BranchList"];
 		$err="";
 		if(trim($id)=="")
 		{
@@ -40,6 +53,10 @@
 		if($category=="")
 		{
 			$err .= "Invalid category</br>";
+		}
+		if($branch=="")
+		{
+			$err .="Invalid branch</br>";
 		}
 		if(!is_numeric($price))
 		{
@@ -65,8 +82,8 @@
 					{
 						copy($pic['tmp_name'], "img/".$pic['name']);
 						$filepic = $pic['name'];
-						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id)
-						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category')";
+						$sqlString = "insert into product(product_id, product_name, price, smalldesc, detaildesc, prodate, pro_qty, pro_image, cat_id, bra_id)
+						values('$id','$proname','$price','$short','$detail','".date('Y-m-d H:i:s')."',$qty,'$filepic','$category','$branch')";
 						pg_query($conn,$sqlString);
 						echo '<meta http-equiv="refresh" content="0;URL =?page=product_management"';
 					}
@@ -105,6 +122,12 @@
 							<?php bind_Category_List($conn); ?>
 						</div>
                 </div>  
+				<div class="form-group">   
+                    <label for="" class="col-sm-2 control-label">Company branch(*):  </label>
+						<div class="col-sm-10">
+							<?php bind_Branch_List($conn); ?>
+						</div>
+                </div>
                 <div class="form-group">  
                     <label for="lblGia" class="col-sm-2 control-label">Price(*):  </label>
 							<div class="col-sm-10">

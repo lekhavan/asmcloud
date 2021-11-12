@@ -19,10 +19,25 @@
 			}
 	echo"</select>";
 	}
+	function bind_Branch_List($conn,$selectedValue){
+		$sqlstring="SELECT bra_id, bra_name from branch";
+		$result=pg_query($conn,$sqlstring);
+		echo"<Select name='BranchList' class='form-control'>
+			<option value='0'>Choose branch</option>";
+			while($row=pg_fetch_array($result,NULL, PGSQL_ASSOC)){
+				if($row['bra_id']==$selectedValue){
+					echo"<option value='". $row['bra_id']."' selected>".$row['bra_name']."</option>";
+				}
+				else{
+					echo"<option value='". $row['bra_id']."'>".$row['bra_name']."</option>";
+				}
+			}
+	echo"</select>";
+	}
 	if(isset($_GET["id"])){
 		$id=$_GET["id"];
 		$sqlstring="SELECT product_name, price, smalldesc, detaildesc, prodate, pro_qty,
-		pro_image, cat_id from product where product_id='$id'";
+		pro_image, cat_id, bra_id from product where product_id='$id'";
 		$result=pg_query($conn,$sqlstring);
 		$row=pg_fetch_array($result,NULL, PGSQL_ASSOC);
 		$proname=$row["product_name"];
@@ -32,6 +47,7 @@
 		$qty=$row['pro_qty'];
 		$pic=$row['pro_image'];
 		$category=$row['cat_id'];
+		$branch=$row['bra_id'];
 	
 ?>
 <div class="container">
@@ -58,7 +74,12 @@
 							    <?php bind_Category_List($conn, $category); ?>
 							</div>
                 </div>  
-                          
+                <div class="form-group">   
+                    <label for="" class="col-sm-2 control-label">Company branch(*):  </label>
+							<div class="col-sm-10">
+							    <?php bind_Branch_List($conn, $branch); ?>
+							</div>
+                </div>           
                 <div class="form-group">  
                     <label for="lblGia" class="col-sm-2 control-label">Price(*):  </label>
 							<div class="col-sm-10">
@@ -115,6 +136,7 @@
 		$qty=$_POST['txtQty'];
 		$pic=$_FILES['txtImage'];
 		$category=$_POST['CategoryList'];
+		$branch=$_POST['BranchList'];
 		$err="";
 		if(trim($id)==""){
 			$err.="<li>Enter product ID, please</li>";
@@ -144,7 +166,7 @@
 						        $filePic = $pic['name'];
 						        $sqlstring="UPDATE product set product_name='$proname', price='$price', smalldesc='$short',
 						        detaildesc='$detail', pro_qty='$qty',
-						        pro_image='$filePic',cat_id='$category',
+						        pro_image='$filePic',cat_id='$category', bra_id = '$branch',
 						        prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 						        pg_query($conn,$sqlstring);
 						        echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
@@ -167,7 +189,7 @@
 				if(pg_num_rows($result)==0){
 					$sqlstring="UPDATE product set product_name='$proname',
 					price=$price, smalldesc='$short', detaildesc='$detail',
-					pro_qty=$qty, cat_id='$category',
+					pro_qty=$qty, cat_id='$category',bra_id ='$branch',
 					prodate='".date('Y-m-d H:i:s')."' WHERE product_id='$id'";
 					pg_query($conn,$sqlstring);
 					echo '<meta http-equiv="refresh" content="0;URL=?page=product_management"/>';
