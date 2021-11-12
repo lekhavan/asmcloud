@@ -6,14 +6,13 @@
 	<link rel="stylesheet" href="css/bootstrap.min.css">
    <?php
 	include_once("connection.php");
-    if(isset($_GET["id"]))
+    if(isset($_GET["name"]))
     {
-		$id = $_GET["id"];
-		$result = pg_query($conn, "SELECT * FROM branch WHERE bra_id='$id'");
+		$name = $_GET["name"];
+		$result = pg_query($conn, "SELECT * FROM branch WHERE bra_name='$name'");
 		$row = pg_fetch_array($result,NULL, PGSQL_ASSOC);
-		$cat_id = $row['bra_id'];
-		$cat_name = $row['bra_name'];
-		$cat_des = $row['bra_des'];
+		$bra_name = $row['bra_name'];
+		$bra_des = $row['bra_des'];
 	
 	?>
 <div class="container">

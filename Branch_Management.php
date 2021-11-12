@@ -37,11 +37,11 @@
               
               <td><?php echo $row["bra_name"]; ?></td>
               <td><?php echo $row["bra_des"]; ?></td>
-              <td style='text-align:center'><a href="?page=update_branch&&id=<?php echo $row["bra_name"]; ?>">
+              <td style='text-align:center'><a href="?page=update_branch&&name=<?php echo $row["bra_name"]; ?>">
               <img src='images/edit.png' border='0'  /></a></td>
 
               <td style='text-align:center'>
-              <a href="?page=branch_management& function=del&&id=<?php echo $row["bra_id"]; ?> " onclick="return deleteConfirm()">
+              <a href="?page=branch_management& function=del&&id=<?php echo $row["bra_name"]; ?> " onclick="return deleteConfirm()">
               <img src='images/delete.png' border='0' /></a></td>
               
             </tr>
@@ -68,7 +68,7 @@
         if(isset($_GET["function"])=="del"){
             if(isset($_GET["name"])){
                 $id = $_GET["name"];
-                pg_query($conn, "DELETE FROM branch WHERE bra_name='$id'");
+                pg_query($conn, "DELETE FROM branch WHERE bra_name='$name'");
             }
         }
         ?>
