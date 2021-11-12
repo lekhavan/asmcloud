@@ -70,7 +70,7 @@
 		   if(pg_num_rows($result)==0)
 		   {
 			   pg_query($conn, "UPDATE branch SET bra_name  = '$name', bra_des='$des' WHERE bra_name='$name'");
-			   echo '<meta http-equiv="refresh" content="0;URL=?page=category_management"/>';
+			   echo '<meta http-equiv="refresh" content="0;URL=?page=branch_management"/>';
 		   }
 		   else
 		   {
