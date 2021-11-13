@@ -57,12 +57,15 @@
 	   $name = $_POST["txtName"];
 	   $des = $_POST["txtDes"];
 	   $err="";
+	   if($des==""){
+		$err.="<li> Enter description, please</li>";
+	   }
        if($err!=""){
 		   echo "<ul>$err</ul>";
 	   }
 	   else
 	   {
-		$sq="SELECT * FROM branch WHERE bra_name !='$name'";
+		$sq="SELECT * FROM branch WHERE bra_name !='$name' and bra_des = '$des'";
 		$result = pg_query($conn,$sq);
 		if(pg_num_rows($result)==0)
 		{
