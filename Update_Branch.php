@@ -11,8 +11,8 @@
 		$name = $_GET["name"];
 		$result = pg_query($conn, "SELECT * FROM branch WHERE bra_name='$name'");
 		$row = pg_fetch_array($result,NULL, PGSQL_ASSOC);
-		$bra_name = $row['bra_name'];
-		$bra_des = $row['bra_des'];
+		$name = $row['bra_name'];
+		$des = $row['bra_des'];
 	
 	?>
 <div class="container">
