@@ -11,8 +11,8 @@
 		$name = $_GET["name"];
 		$result = pg_query($conn, "SELECT * FROM branch WHERE bra_name='$name'");
 		$row = pg_fetch_array($result,NULL, PGSQL_ASSOC);
-		$name = $row['bra_name'];
-		$des = $row['bra_des'];
+		$bra_name = $row['bra_name'];
+		$bra_des = $row['bra_des'];
 	
 	?>
 <div class="container">
@@ -57,9 +57,6 @@
 	   $name = $_POST["txtName"];
 	   $des = $_POST["txtDes"];
 	   $err="";
-	   if($name==""){
-		   $err.="<li> Enter Branch Name, please</li>";
-	   }
        if($err!=""){
 		   echo "<ul>$err</ul>";
 	   }
